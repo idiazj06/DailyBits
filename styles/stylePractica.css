@@ -251,13 +251,7 @@ body {
     bottom: 0px;
 }
 
-#logo-home{
-    position: absolute;
-    width: 38px;
-    height:45px;
-    top: 12px;
-    left: 26.5px;
-}
+
 
 #logo-estadisticas {
     position: absolute;
@@ -276,3 +270,19 @@ body {
     left: 299.5px;
     
 }
+.logo{
+    position: absolute;
+    width: 38px;
+    height:45px;
+    top: 12px;
+    left: 26.5px;
+}
+
+.activo{
+    fill: #2CB67D
+}
+
+.inactivo{
+    fill: #FFFFFE
+}
+
