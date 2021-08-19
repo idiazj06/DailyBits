@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    padding: 0;
+    left: 0;
+    top: 0;
+    margin: 0;
+}
+
+body {
+    position: relative;
+    width: 360px;
+    height: 640px;
+
+    /* Black */
+
+    background: #16161A;
+}
+
+.contenedor-top {
+    width: 360px;
+    height: 82px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+
+}
+
+.contenedor-top #contenido-contenedor-top {
+    position: absolute;
+    width: 328px;
+    height: 50px;
+    top: 16px;
+    left: 16px;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 0.0015em;
+    color: #FFFFFE;
+}
+
+.container-principal {
+    position: absolute;
+    width: 360px;
+    height: 525px;
+    top: 115px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#categorias1 {
+    position: absolute;
+    width: 96px;
+    height: 128px;
+    left: 132px; 
+    top: 0px   
+}
+
+#frame1 {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 25%;
+}
+
+#logo-html {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    top: 16px;
+    left: 16px;
+}
+
+#texto-categorias1 {
+    position: absolute;
+    width: 96px;
+    height: 14px;
+    top: 104px;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.005em;
+    color: #FFFFFE;
+}
+
+#categorias2 {
+    position: absolute;
+    width: 216px;
+    height: 128px;
+    top: 152px;
+    left: 72px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+}
+
+#texto-categorias2 {
+    position: absolute;
+    width: 96px;
+    height: 14px;
+    top: 85px;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.005em;
+    color: #FFFFFE;
+}
+
+#frame2 {
+    position: absolute;
+    width: 96px;
+    height: 128px;
+    top: -20px;
+    left: 3px;
+}
+
+#frame2-1 {
+    position: absolute;
+    width: 96px;
+    height: 128px;
+    top: -20px;
+    left: 120px
+}
+
+#texto-categorias2-1 {
+    position: absolute;
+    width: 96px;
+    height: 14px;
+    top: 85px;
+    left: 120px;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.005em;
+    color: #FFFFFE;
+}
+
+#categorias3 {
+    position: absolute;
+    width: 216px;
+    height: 128px;
+    top: 280px;
+    left: 72px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+}
+
+#texto-categorias3 {
+    position: absolute;
+    width: 96px;
+    height: 14px;
+    top: 104px;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.005em;
+    color: #FFFFFE;
+}
+
+#frame3 {
+    position: absolute;
+    width: 96px;
+    height: 96px;
+    top: -5px;
+    left: 3px
+}
+
+#frame3-1 {
+    position: absolute;
+    width: 96px;
+    height: 128px;
+    top: -5px;
+    left: 120px
+}
+
+#texto-categorias3-1 {
+    position: absolute;
+    width: 96px;
+    height: 14px;
+    top: 104px;
+    left: 120px;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.005em;
+    color: #FFFFFE;
+}
+
+#navegacion {
+    position: absolute;
+    width: 360px;
+    height: 69px;
+    top: 571px;
+    background: #232E35;
+    left: 0px;
+    bottom: 0px;
+}
+
+#logo-home{
+    position: absolute;
+    width: 38px;
+    height:45px;
+    top: 12px;
+    left: 26.5px;
+}
+
+#logo-estadisticas {
+    position: absolute;
+    width: 75px;
+    height: 45px;
+    top: 12px;
+    left: 144.5px;
+    
+}
+
+#logo-perfil{
+    position: absolute;
+    width: 34px;
+    height:45px;
+    top:12px;
+    left: 299.5px;
+    
+}
