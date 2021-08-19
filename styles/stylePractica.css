@@ -69,6 +69,37 @@ body {
     bottom: 25%;
 }
 
+.uno{
+    height: 96px;
+    width: 96px;
+    position:absolute;
+    left: 45.5px;
+    top: 50px;
+    transform:translate(-50%, -50%) rotate(-90deg);
+
+}
+
+.uno .medio-fondo{
+    fill: transparent;
+    stroke: #DDDDDD;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 0;
+    animation: animateMedio 2s linear ;
+    animation-fill-mode: forwards;
+}
+.uno .medio{
+    fill: transparent;
+    stroke:rgb(0, 192, 0);
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 275;
+    animation: animateMedio 2s linear ;
+    animation-fill-mode: forwards;
+}
+
 #logo-html {
     position: absolute;
     width: 64px;
