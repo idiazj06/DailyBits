@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2400be;
+}
+
+.box {
+    height: 350px;
+    width: 250px;
+    background: #fff;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.box svg{
+    height: 96px;
+    width: 96px;
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%, -50%) rotate(-90deg);
+
+} 
+.uno{
+    height: 96px;
+    width: 96px;
+    position:absolute;
+    left: 75%;
+    top: 50%;
+    transform:translate(-50%, -50%) rotate(-90deg);
+
+} 
+
+.box svg,.uno .cero{
+    fill: transparent;
+    stroke:#007eff;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 0;
+    animation: animate 8s linear infinite 
+}
+
+.box svg .unCuarto{
+    fill: transparent;
+    stroke:#007eff;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: animateUnCuarto 1s linear ;
+    animation-fill-mode: forwards;
+}
+.box svg .medio{
+    fill: #DDDDDD;
+    stroke:#007eff;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: animateMedio 2s linear ;
+    animation-fill-mode: forwards;
+}
+.box svg .medioCuarto{
+    fill: transparent;
+    stroke:#007eff;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: animateMedioCuarto 3s linear ;
+    animation-fill-mode: forwards;
+}
+.box svg .completo{
+    fill: transparent;
+    stroke:#007eff;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: animateCompleto 4s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animateCompleto {
+    100%{
+        stroke-dashoffset: 0;
+    }    
+}
+@keyframes animateMedioCuarto {
+    100%{
+        stroke-dashoffset: 175;
+    }    
+}
+@keyframes animateMedio {
+    100%{
+        stroke-dashoffset: 250;
+    }    
+}
+@keyframes animateUnCuarto {
+    100%{
+        stroke-dashoffset: 325;
+    }    
+}
+
+
+
+
+
