@@ -4,13 +4,21 @@
     padding: 0;
     left: 0;
     top: 0;
+    margin: 0;
 }
 
 body {
     background-color: #7F5AF0;
 }
 
-#logo{
-    margin-top:248px;
-    margin-left: 91px;
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+#logo {
+    Width: 177, 15px;
+    Height: 143, 62px;
+    margin: auto;
 }

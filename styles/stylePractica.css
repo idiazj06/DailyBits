@@ -12,9 +12,6 @@ body {
     position: relative;
     width: 360px;
     height: 640px;
-
-    /* Black */
-
     background: #16161A;
 }
 
@@ -24,7 +21,6 @@ body {
     top: 0px;
     left: 0px;
     position: absolute;
-
 }
 
 .contenedor-top #contenido-contenedor-top {
@@ -50,15 +46,14 @@ body {
     top: 115px;
     display: flex;
     flex-direction: column;
-
 }
 
 #categorias1 {
     position: absolute;
     width: 96px;
     height: 128px;
-    left: 132px; 
-    top: 0px   
+    left: 132px;
+    top: 0px
 }
 
 #frame1 {
@@ -69,36 +64,63 @@ body {
     bottom: 25%;
 }
 
-.uno{
+.uno {
     height: 96px;
     width: 96px;
-    position:absolute;
+    position: absolute;
     left: 45.5px;
     top: 50px;
-    transform:translate(-50%, -50%) rotate(-90deg);
-
+    transform: translate(-50%, -50%) rotate(-90deg);
 }
 
-.uno .medio-fondo{
+.uno .medio-fondo {
     fill: transparent;
     stroke: #DDDDDD;
     stroke-width: 10;
     stroke-linecap: round;
     stroke-dasharray: 400;
     stroke-dashoffset: 0;
-    animation: animateMedio 2s linear ;
     animation-fill-mode: forwards;
 }
-.uno .medio{
+
+.uno .medio {
     fill: transparent;
-    stroke:rgb(0, 192, 0);
+    stroke: #2cb67d;
     stroke-width: 10;
     stroke-linecap: round;
     stroke-dasharray: 400;
-    stroke-dashoffset: 275;
-    animation: animateMedio 2s linear ;
+    stroke-dashoffset: 400;
+    animation: animateMedio 2s linear;
     animation-fill-mode: forwards;
 }
+
+/* Keyframes barra de progreso */
+
+@keyframes animateCompleto {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes animateMedioCuarto {
+    100% {
+        stroke-dashoffset: 175;
+    }
+}
+
+@keyframes animateMedio {
+    100% {
+        stroke-dashoffset: 280;
+    }
+}
+
+@keyframes animateUnCuarto {
+    100% {
+        stroke-dashoffset: 325;
+    }
+}
+
+/* Contenedor principal */
 
 #logo-html {
     position: absolute;
@@ -241,6 +263,7 @@ body {
     color: #FFFFFE;
 }
 
+/* Barra de navegacion */
 #navegacion {
     position: absolute;
     width: 360px;
@@ -253,36 +276,34 @@ body {
 
 
 
-#logo-estadisticas {
+.logo-estadisticas {
     position: absolute;
     width: 75px;
     height: 45px;
     top: 12px;
     left: 144.5px;
-    
 }
 
-#logo-perfil{
+.logo-perfil {
     position: absolute;
     width: 34px;
-    height:45px;
-    top:12px;
+    height: 45px;
+    top: 12px;
     left: 299.5px;
-    
 }
-.logo{
+
+.logo-home {
     position: absolute;
     width: 38px;
-    height:45px;
+    height: 45px;
     top: 12px;
     left: 26.5px;
 }
 
-.activo{
+.activo {
     fill: #2CB67D
 }
 
-.inactivo{
+.inactivo {
     fill: #FFFFFE
 }
-
