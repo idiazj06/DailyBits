@@ -6,29 +6,46 @@
     left: 0;
     top: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
     position: relative;
-    width: 360px;
-    height: 640px;
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
     background: #16161A;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+header {
+    padding: 10px
+}
+
+#navegacion {
+    width: 100vw;
+    height: 69px;
+    left: 0;
+    background: #232E35;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .contenedor-top {
-    width: 360px;
-    height: 82px;
-    top: 0px;
-    left: 0px;
-    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contenedor-top #contenido-contenedor-top {
-    position: absolute;
-    width: 328px;
-    height: 50px;
-    top: 16px;
-    left: 16px;
+    width: 100%;
+    margin: auto;
     font-family: 'Nunito', sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -39,271 +56,134 @@ body {
     color: #FFFFFE;
 }
 
-.container-principal {
-    position: absolute;
-    width: 360px;
-    height: 525px;
-    top: 115px;
+/* BARRA PROGRESO */
+.container-center {
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
 }
 
-#categorias1 {
-    position: absolute;
-    width: 96px;
-    height: 128px;
-    left: 132px;
-    top: 0px
-}
-
-#frame1 {
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    top: 0%;
-    bottom: 25%;
-}
-
-.uno {
-    height: 96px;
-    width: 96px;
-    position: absolute;
-    left: 45.5px;
-    top: 50px;
-    transform: translate(-50%, -50%) rotate(-90deg);
-}
-
-.uno .medio-fondo {
-    fill: transparent;
-    stroke: #DDDDDD;
-    stroke-width: 10;
-    stroke-linecap: round;
-    stroke-dasharray: 400;
-    stroke-dashoffset: 0;
-    animation-fill-mode: forwards;
-}
-
-.uno .medio {
-    fill: transparent;
-    stroke: #2cb67d;
-    stroke-width: 10;
-    stroke-linecap: round;
-    stroke-dasharray: 400;
-    stroke-dashoffset: 400;
-    animation: animateMedio 2s linear;
-    animation-fill-mode: forwards;
-}
-
-/* Keyframes barra de progreso */
-
-@keyframes animateCompleto {
-    100% {
-        stroke-dashoffset: 0;
-    }
-}
-
-@keyframes animateMedioCuarto {
-    100% {
-        stroke-dashoffset: 175;
-    }
-}
-
-@keyframes animateMedio {
-    100% {
-        stroke-dashoffset: 280;
-    }
-}
-
-@keyframes animateUnCuarto {
-    100% {
-        stroke-dashoffset: 325;
-    }
-}
-
-/* Contenedor principal */
-
-#logo-html {
-    position: absolute;
-    width: 64px;
-    height: 64px;
-    top: 16px;
-    left: 16px;
-}
-
-#texto-categorias1 {
-    position: absolute;
-    width: 96px;
-    height: 14px;
-    top: 104px;
-    font-family: 'Nunito', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    letter-spacing: 0.005em;
-    color: #FFFFFE;
-}
-
-#categorias2 {
-    position: absolute;
-    width: 216px;
-    height: 128px;
-    top: 152px;
-    left: 72px;
+.container {
+    width: 100vw;
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
+    justify-content: space-evenly;
+    align-items: center;
+
 }
 
-#texto-categorias2 {
-    position: absolute;
-    width: 96px;
-    height: 14px;
-    top: 85px;
-    font-family: 'Nunito', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    letter-spacing: 0.005em;
-    color: #FFFFFE;
-}
 
-#frame2 {
-    position: absolute;
-    width: 96px;
-    height: 128px;
-    top: -20px;
-    left: 3px;
-}
-
-#frame2-1 {
-    position: absolute;
-    width: 96px;
-    height: 128px;
-    top: -20px;
-    left: 120px
-}
-
-#texto-categorias2-1 {
-    position: absolute;
-    width: 96px;
-    height: 14px;
-    top: 85px;
-    left: 120px;
-    font-family: 'Nunito', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    letter-spacing: 0.005em;
-    color: #FFFFFE;
-}
-
-#categorias3 {
-    position: absolute;
-    width: 216px;
-    height: 128px;
-    top: 280px;
-    left: 72px;
+.texto-circulos-solo {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    
 }
 
-#texto-categorias3 {
-    position: absolute;
-    width: 96px;
-    height: 14px;
-    top: 104px;
+.texto {
+    color: #FFFFFE;
     font-family: 'Nunito', sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 16px;
+    /* font-size: 16px; */
+    font-size: 1.75vw;
     line-height: 24px;
     text-align: center;
     letter-spacing: 0.005em;
-    color: #FFFFFE;
 }
 
-#frame3 {
-    position: absolute;
+
+
+.logo {
+    max-width: 64px;
+    max-height: 64px;
+}
+
+
+
+.progressbar {
     width: 96px;
     height: 96px;
-    top: -5px;
-    left: 3px
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: translate(0%, 0%);
+    overflow: hidden;
+
 }
 
-#frame3-1 {
+.half-circle,
+.half-circle-top {
     position: absolute;
-    width: 96px;
-    height: 128px;
-    top: -5px;
-    left: 120px
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    transform-origin: right center;
 }
 
-#texto-categorias3-1 {
-    position: absolute;
-    width: 96px;
-    height: 14px;
-    top: 104px;
-    left: 120px;
-    font-family: 'Nunito', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    letter-spacing: 0.005em;
-    color: #FFFFFE;
+.half-circle:nth-child(1) {
+    background-color: #2CB67D;
 }
 
-/* Barra de navegacion */
-#navegacion {
-    position: absolute;
-    width: 360px;
-    height: 69px;
-    top: 571px;
-    background: #232E35;
-    left: 0px;
-    bottom: 0px;
+.half-circle:nth-child(2) {
+    background-color: #2CB67D;
+}
+
+.half-circle-top {
+    background-color: #FFFFFE;
+}
+
+.progressbar:hover .half-circle:nth-child(1) {
+    transform: rotate(180deg);
+    transition: transform 1s linear;
+}
+
+.progressbar:hover .half-circle:nth-child(2) {
+    transform: rotate(360deg);
+    transition: transform 2s linear;
+}
+
+.progressbar:hover .half-circle-top {
+    opacity: 0;
+    transition: opacity 0s 1s;
+}
+
+.progressbar-circle {
+    width: 80px;
+    height: 80px;
+    background-color: #16161A;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 4rem;
+    z-index: 10;
 }
 
 
 
-.logo-estadisticas {
-    position: absolute;
-    width: 75px;
-    height: 45px;
-    top: 12px;
-    left: 144.5px;
+@media screen and (max-width:768px) {
+    .progressbar {
+        width: 96px;
+        height: 96px;
+    }
+
+    .progressbar-circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .logo {
+        width: 69px;
+        height: 69px;
+    }
 }
 
-.logo-perfil {
-    position: absolute;
-    width: 34px;
-    height: 45px;
-    top: 12px;
-    left: 299.5px;
-}
-
-.logo-home {
-    position: absolute;
-    width: 38px;
-    height: 45px;
-    top: 12px;
-    left: 26.5px;
-}
-
-.activo {
-    fill: #2CB67D
-}
-
-.inactivo {
-    fill: #FFFFFE
-}

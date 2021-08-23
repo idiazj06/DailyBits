@@ -1,22 +1,26 @@
-const navegacion = document.getElementById('navegacion')
-const logoHomeIcono = document.querySelector('.path-logo-home-icono')
-const textoHomeIcono = document.querySelector('.path-logo-home-letras')
+const halfCircles = document.querySelectorAll('.half-circle')
+const halfCircleTop = document.querySelector('.half-circle-top')
+const progressBarCircle = document.querySelector('.progressbar-circle')
 
-console.log(navegacion)
-console.log(logoHomeIcono)
-console.log(textoHomeIcono)
+document.addEventListener('scroll', () => {
+    const pageViewportHeight = window.innerHeight
+    const pageHeight = document.documentElement.scrollHeight
+    const scrolledPortion = window.pageYOffset
+    
+    const scrolledPortionDegree = (scrolledPortion / (pageHeight - pageViewportHeight)) * 360
 
-navegacion.addEventListener('click',e=>{
-    cambiarFill(e)
+    const scrolledPortionPercent = Math.floor(scrolledPortionDegree / 360 * 100)
+
+    progressBarCircle.textContent = `${scrolledPortionPercent}%`
+
+    halfCircles.forEach(el => {
+        el.style.transform = `rotate(${scrolledPortionDegree}deg)`
+
+        if(scrolledPortionDegree >= 180) {
+            halfCircles[0].style.transform = 'rotate(180deg)'
+            halfCircleTop.style.opacity = '0'
+        } else {
+            halfCircleTop.style.opacity = '1'
+        }
+    })
 })
-
-const cambiarFill = e=>{
-    console.log(e.target/* .classList.contains('logo') */)
-    console.log(e.target.classList.contains('logo'))
-    if ((e.target.classList.contains('logo'))){
-        logoHomeIcono.classList.remove('inactivo') 
-        textoHomeIcono.classList.remove('inactivo')
-        logoHomeIcono.classList.add('activo') 
-        textoHomeIcono.classList.add('activo')
-    }
-}
