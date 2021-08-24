@@ -1,4 +1,4 @@
-let checkbox = document.getElementById('input')
+let checkbox = document.getElementById('input1')
 
 
 
@@ -11,4 +11,4 @@ function validaCheckbox()
   }else{
       console.log('no lo esta')
   }
-}
+} 
