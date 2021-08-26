@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/styleDesarrollo.css">
-    <title>Estadisticas</title>
+    <title>copia</title>
 </head>
 
 <body>
@@ -18,8 +18,8 @@
         <div class="contenedor-top">
             <div class="izquierda"><a href="home.html"><i class="fas fa-times"></i></a></div>
             <div class="progress ">
-                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="75" aria-valuemin="0"
-                    aria-valuemax="100"></div>
+                <div id="barra-vidas" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="75"
+                    aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <div class="derecha"><span id="corazon"><i class="fas fa-heart"></i></span><span id="vidas">4</span></div>
         </div>
@@ -27,7 +27,55 @@
 
     <main id="principal">
         <div class="container-principal">
-            <img id="character-joven" src="./Images/Iconos/caracters.png" alt="">
+            <img id="character" src="./Images/Iconos/caracters.png" alt="">
+            <p id="texto-principal">¿Qué etiqueta es semánticamente correcta para el contenido principal?</p>
+        </div>
+
+        <div class="selecciones" id="selecciones">
+            <div class="inputs">
+                <label for="input1" id="labelInput1" class=" input form-check-label">
+                    <span id="opcion1" class="opciones true">main</span>
+                    <input type="checkbox" name="input1" class="check" id="input1" >
+                    <div class="img" id="img1"></div>
+                </label>
+            </div>
+            <div class="inputs">
+                <label for="input2" id="labelInput2" class="input form-check-label">
+                    <span id="opcion2" class="opciones">section</span>
+                    <input type="checkbox" name="test" class="check"  id="input2">
+                    <div class="img" id="img2"></div>
+                </label>
+            </div>
+            <div class="inputs">
+                <label for="input3" id="labelInput3" class=" input form-check-label">
+                    <span id="opcion3" class="opciones">header</span>
+                    <input type="checkbox" name="test" class="check"  id="input3">
+                    <div class="img" id="img3"></div>
+                </label>
+            </div>
+        </div>
+    </main>
+
+    <!-- <div class="" id="items"></div> -->
+
+    
+    <footer id="piePagina">
+        <div class="contenedor-bott">
+            <button type="button" class="btn  btn-comprobar" disabled><span id="texto-boton">COMPROBAR</span></button>
+        </div>
+
+        <div class="alert alert-success" role="alert" id="alertaModal">
+            <p id="texto-alert">¡Buen trabajo!</p>
+            <span id="texto-sec-alert"></span><br><br>
+            <button type="submit" class="btn  btn-continuar btn-alerta"><span
+                    id="texto-boton">CONTINUAR</span></button>
+        </div>
+    </footer>
+
+
+    <template id="template-main">
+        <div class="container-principal">
+            <img id="character" src="./Images/Iconos/caracters.png" alt="">
             <p id="texto-principal">¿Qué etiqueta es semánticamente correcta para el contenido principal?</p>
         </div>
 
@@ -35,12 +83,12 @@
             <div class="inputs">
                 <label for="input1" id="labelInput1" class=" input form-check-label">
                     <span id="opcion1" class="opciones">main</span>
-                    <input type="checkbox" name="input1"  id="input1" >
+                    <input type="checkbox" name="input1" id="input1">
                     <div class="img" id="img1"></div>
                 </label>
             </div>
             <div class="inputs">
-                <label for="input2" id="labelInput2"  class="input form-check-label">
+                <label for="input2" id="labelInput2" class="input form-check-label">
                     <span id="opcion2" class="opciones">section</span>
                     <input type="checkbox" name="test" value="small" id="input2">
                     <div class="img" id="img2"></div>
@@ -54,10 +102,9 @@
                 </label>
             </div>
         </div>
-    </main>
+    </template>
 
-
-    <footer id="piePagina">
+    <template id="template-footer">
         <div class="contenedor-bott">
             <button type="button" class="btn  btn-comprobar"><span id="texto-boton">COMPROBAR</span></button>
         </div>
@@ -65,15 +112,13 @@
         <div class="alert alert-success alerta" role="alert">
             <p id="texto-alert">¡Buen trabajo!</p>
             <span id="texto-sec-alert"></span><br><br>
-            <button type="button" class="btn  btn-continuar btn-continuar"><span
-                    id="texto-boton">CONTINUAR</span></button>
+            <button type="button" class="btn   btn-continuar" id="btn-alerta">
+                <span>id="texto-boton">CONTINUAR</span></button>
         </div>
-    </footer>
+    </template>
 
-    <!-- <script src="./scripts/scriptTemplates.js" type="module"></script> -->
-    <script src="./scripts/scriptDesarrollo.js" type="module"></script>
-    <script src="./scripts/scriptPractica.js" type="module"></script>
-    <!-- <script src="./scripts/scriptPractica.js"></script> -->
+    <script src="./scripts/scriptTemplates.js" type="module"></script>
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

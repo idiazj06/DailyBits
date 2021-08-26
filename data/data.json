@@ -1,8 +1,8 @@
 {
-    "html":{
-        "pregunta1":{
+    "html": {
+        "pregunta1": {
             "pregunta": "¿Qué etiqueta es semánticamente correcta para el contenido principal?",
-            "imagen":"../Images/Iconos/caracters.png",
+            "imagen": "./Images/Iconos/caracters.png",
             "opcion1": {
                 "dato": "main",
                 "valor": true
@@ -16,23 +16,25 @@
                 "valor": false
             }
         },
-        "Pregunta2": {
+        "pregunta2": {
             "pregunta": "¿Qué etiqueta HTML nos sirve para incluir archivos de JavaScript?",
+            "imagen": "./Images/Iconos/caracters.png",
             "opcion1": {
-                "dato": "<br>",
+                "dato": "br",
                 "valor": false
             },
             "opcion2": {
-                "dato": "<script>",
+                "dato": "script",
                 "valor": true
             },
             "opcion3": {
-                "dato": "<styles>",
+                "dato": "styles",
                 "valor": false
             }
         },
-        "Pregunta3": {
+        "pregunta3": {
             "pregunta": "¿Qué significa DRY?",
+            "imagen": "./Images/Iconos/caracters.png",
             "opcion1": {
                 "dato": "Don’t repeat yellow",
                 "valor": false
