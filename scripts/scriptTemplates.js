@@ -35,6 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }else{
         vidas.textContent = vidasCont
     }
+    if (progresoCont === null) {
+        barraVidas.style.width = '0%'      
+    }else{
+        barraVidas.style.width = `${progresoCont}%`
+    }
 
     
     // pintarProgreso()
@@ -259,10 +264,43 @@ const agregarAlertaFalsa = () => {
 
 const sumarBarraProgress = () => {
     // MIENTRAS TANTO
-    let calculoProgreso = 100 / 3
-    barraVidas.style.width = `${calculoProgreso}%`
+    let calculoProgreso = 100/3
 
-    localStorage.setItem('progreso', JSON.stringify(barraVidas.style.width))
+    console.log(calculoProgreso)
+    console.log(progresoCont)
+
+    if (progresoCont === null ) {
+        progresoCont = 0        
+    }
+
+    let porcActual = calculoProgreso + progresoCont
+
+    console.log(progresoCont)
+    
+
+
+   
+    barraVidas.style.width = `${porcActual}%` 
+          
+
+
+    localStorage.setItem('progreso', JSON.stringify(porcActual)) 
+
+  
+
+
+
+
+
+
+
+    // barraVidas.style.width = `${aumentoBarra}%`
+
+    // console.log(barraVidas.style.width)
+
+    // localStorage.setItem('progreso', JSON.stringify(barraVidas.style.width))
+
+    
    
 }
 
@@ -290,7 +328,7 @@ function devolverAlerta(e) {
     checkbox3.checked = false
 
 
-    location.reload()
+    // location.reload()
     console.log(vidas)
 
     
