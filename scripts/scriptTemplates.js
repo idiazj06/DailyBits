@@ -118,6 +118,10 @@ const capturarCheck = data => {
     let checkbox1 = document.getElementById('input1')
     let checkbox2 = document.getElementById('input2')
     let checkbox3 = document.getElementById('input3')
+    let labelInput1 = document.getElementById('labelInput1')
+    let labelInput2 = document.getElementById('labelInput2')
+    let labelInput3 = document.getElementById('labelInput3')
+
 
     checkbox1.value = opcion1.valor
     checkbox2.value = opcion2.valor
@@ -135,6 +139,10 @@ const capturarCheck = data => {
 
         if (seleccionado) {
             console.log('esta check')
+            labelInput2.classList.remove('inputVerdadero')
+            labelInput2.classList.remove('inputFalso')
+            labelInput3.classList.remove('inputVerdadero')
+            labelInput3.classList.remove('inputFalso')
             checkbox2.checked = false
             checkbox3.checked = false
             checkbox1.value = opcion1.valor
@@ -154,8 +162,11 @@ const capturarCheck = data => {
     const pintarCheck1 = () => {
         if (checkbox1.value === 'true') {
             checkbox1.classList = 'verdadero'
+            labelInput1.classList.add('inputVerdadero')
+            
         } else {
             checkbox1.classList = 'falso'
+            labelInput1.classList.add('inputFalso')
         }
     }
 
@@ -164,6 +175,10 @@ const capturarCheck = data => {
 
         if (seleccionado) {
             console.log('esta check')
+            labelInput1.classList.remove('inputVerdadero')
+            labelInput1.classList.remove('inputFalso')
+            labelInput3.classList.remove('inputVerdadero')
+            labelInput3.classList.remove('inputFalso')
             checkbox1.checked = false
             checkbox3.checked = false
             checkbox1.value = 'empty'
@@ -182,8 +197,10 @@ const capturarCheck = data => {
     const pintarCheck2 = () => {
         if (checkbox2.value === 'true') {
             checkbox2.classList = 'verdadero'
+            labelInput2.classList.add('inputVerdadero')
         } else {
             checkbox2.classList = 'falso'
+            labelInput2.classList.add('inputFalso')
         }
     }
 
@@ -192,6 +209,10 @@ const capturarCheck = data => {
 
         if (seleccionado) {
             console.log('esta check')
+            labelInput1.classList.remove('inputVerdadero')
+            labelInput1.classList.remove('inputFalso')
+            labelInput2.classList.remove('inputVerdadero')
+            labelInput2.classList.remove('inputFalso')
             checkbox1.checked = false
             checkbox2.checked = false
             checkbox1.value = 'empty'
@@ -209,8 +230,10 @@ const capturarCheck = data => {
     const pintarCheck3 = () => {
         if (checkbox3.value === 'true') {
             checkbox3.classList = 'verdadero'
+            labelInput3.classList.add('inputVerdadero')
         } else {
             checkbox3.classList = 'falso'
+            labelInput3.classList.add('inputFalso')
         }
     }
 
@@ -256,7 +279,7 @@ const agregarAlertaFalsa = () => {
     alerta.classList.add('alert-danger')
     alerta.classList.add('alertaFalsa')
 
-    document.getElementById('texto-alert').textContent = 'La respuesta correcta es'
+    document.getElementById('texto-alert').textContent = 'La respuesta correcta es:'
     document.getElementById('texto-sec-alert').textContent = respCorrecta
     document.querySelector('.btn-continuar').classList.add('btn-danger')
     document.querySelector('.btn-continuar').style.backgroundColor = 'none'
