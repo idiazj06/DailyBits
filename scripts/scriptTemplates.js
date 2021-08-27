@@ -10,6 +10,9 @@ const alerta = document.getElementById('alertaModal')
 const botonContinuar = document.querySelector('.btn-alerta');
 let vidasCont = JSON.parse(localStorage.getItem('vidas'))
 let progresoCont = JSON.parse(localStorage.getItem('progreso'))
+let newArray = ''
+let arrReturn = JSON.parse(localStorage.getItem('aleatorias'))
+let random = ''
 
 
 
@@ -28,20 +31,26 @@ vidas.textContent = '3' */
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
     fetchData()
 
     if (vidasCont === null) {
-        vidas.textContent = 5       
-    }else{
+        vidas.textContent = 5
+    } else {
         vidas.textContent = vidasCont
     }
     if (progresoCont === null) {
-        barraVidas.style.width = '0%'      
-    }else{
+        barraVidas.style.width = '0%'
+    } else {
         barraVidas.style.width = `${progresoCont}%`
     }
 
+    console.log(arrReturn)
+    console.log(JSON.parse(localStorage.getItem('aleatorias')))
+
     
+
+
     // pintarProgreso()
 })
 
@@ -53,8 +62,6 @@ const fetchData = async () => {
         const data = await res.json()
         const dataHtml = [data.html]
 
-        console.log([data][0])
-        console.log(dataHtml)
         getRandom(dataHtml)
 
     } catch (error) {
@@ -63,20 +70,30 @@ const fetchData = async () => {
     }
 }
 
+
 const getRandom = data => {
     data.forEach(datos => {
+   
 
-        const newArray = [datos.pregunta1, datos.pregunta2, datos.pregunta3]
+        newArray = [datos.pregunta1, datos.pregunta2, datos.pregunta3]
+        console.log(newArray);
+        console.log(arrReturn)
 
-        console.log(newArray[0])
+        
 
-        let random = Math.floor(Math.random() * newArray.length)
-        let dataPintar = newArray[random]
-
-
-        pintarMain(dataPintar)
-        capturarCheck(dataPintar)
-
+        if (arrReturn === null) {
+            random = Math.floor(Math.random() * newArray.length)
+            console.log(newArray.length)
+            let dataPintar = newArray[random]
+            pintarMain(dataPintar)
+            capturarCheck(dataPintar)
+        } else {
+            random = Math.floor(Math.random() * arrReturn.length)
+            console.log(arrReturn.length)
+            let dataPintar = arrReturn[random]
+            pintarMain(dataPintar)
+            capturarCheck(dataPintar)
+        }
 
     })
 }
@@ -101,10 +118,6 @@ const pintarMain = data => {
     document.querySelectorAll('.opciones')[0].setAttribute('id', opcion1.valor)
     document.querySelectorAll('.opciones')[1].setAttribute('id', opcion2.valor)
     document.querySelectorAll('.opciones')[2].setAttribute('id', opcion3.valor)
-
-
-
-
 }
 
 const capturarCheck = data => {
@@ -113,7 +126,7 @@ const capturarCheck = data => {
         opcion2,
         opcion3
     } = data
-    console.log(opcion1, opcion2, opcion3)
+    // console.log(opcion1, opcion2, opcion3)
 
     let checkbox1 = document.getElementById('input1')
     let checkbox2 = document.getElementById('input2')
@@ -163,7 +176,7 @@ const capturarCheck = data => {
         if (checkbox1.value === 'true') {
             checkbox1.classList = 'verdadero'
             labelInput1.classList.add('inputVerdadero')
-            
+
         } else {
             checkbox1.classList = 'falso'
             labelInput1.classList.add('inputFalso')
@@ -287,44 +300,25 @@ const agregarAlertaFalsa = () => {
 
 const sumarBarraProgress = () => {
     // MIENTRAS TANTO
-    let calculoProgreso = 100/3
+    let calculoProgreso = 100 / 3
 
     console.log(calculoProgreso)
     console.log(progresoCont)
 
-    if (progresoCont === null ) {
-        progresoCont = 0        
+    if (progresoCont === null) {
+        progresoCont = 0
     }
 
     let porcActual = calculoProgreso + progresoCont
 
-    console.log(progresoCont)
+    if(porcActual >= 100){
+        porcActual = 100
+    }
     
-
-
-   
-    barraVidas.style.width = `${porcActual}%` 
-          
-
-
-    localStorage.setItem('progreso', JSON.stringify(porcActual)) 
-
-  
-
-
-
-
-
-
-
-    // barraVidas.style.width = `${aumentoBarra}%`
-
-    // console.log(barraVidas.style.width)
-
-    // localStorage.setItem('progreso', JSON.stringify(barraVidas.style.width))
-
     
-   
+    barraVidas.style.width = `${porcActual}%`
+    localStorage.setItem('progreso', JSON.stringify(porcActual))
+
 }
 
 const restarVidas = () => {
@@ -351,14 +345,26 @@ function devolverAlerta(e) {
     checkbox3.checked = false
 
 
-    // location.reload()
-    console.log(vidas)
+    location.reload()
 
+   
+    validar()
     
-
 
 }
 
+function validar() {
 
+    console.log(random)
+    console.log(newArray)
 
-console.log(vidas)
+    if (arrReturn === null) {
+        console.log('esta vacio')
+        newArray.splice(random, 1)
+        localStorage.setItem('aleatorias', JSON.stringify(newArray));
+    } else {
+        arrReturn.splice(random, 1)
+        localStorage.setItem('aleatorias', JSON.stringify(arrReturn));
+    }
+
+}
