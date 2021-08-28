@@ -47,6 +47,39 @@
                 "dato": "Don’t recicle year",
                 "valor": false
             }
+        },
+        "pregunta4": {
+            "pregunta": "¿Qué tecnologías pertenece al MEVN Stack?",
+            "imagen": "./Images/Iconos/caracters.png",
+            "opcion1": {
+                "dato": {
+                    "imagen": "./Images/Iconos/angularLogo.png",
+                    "texto": "Angular"
+                },
+                "valor": false
+            },
+            "opcion2": {
+                "dato": {
+                    "imagen": "./Images/Iconos/vueLogo.png",
+                    "texto": "Vue.js"
+                },
+                "valor": true
+            },
+            "opcion3": {
+                "dato": {
+                    "imagen": "./Images/Iconos/windowsLogo.png",
+                    "texto": "Windows"
+                },
+                "valor": false
+            },
+            "opcion4": {
+                "dato": {
+                    "imagen": "./Images/Iconos/kotlinLogo.png",
+                    "texto": "Kotlin"
+                },
+                "valor": false
+            }
+
         }
     }
 }

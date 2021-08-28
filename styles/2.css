@@ -1,0 +1,34 @@
+.entradas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+
+.cont-entradas {
+    width: 100%;
+    height: 135px;
+    margin: 15px auto;
+        
+
+}
+
+.inputEntrada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 165px;
+    
+
+}
+
+.img-entrada {
+    width: 100%;
+    height: 90px;
+    object-fit: contain;
+    
+}
