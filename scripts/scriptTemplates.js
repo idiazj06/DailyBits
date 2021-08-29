@@ -23,6 +23,8 @@ let preguntasCorrectas = JSON.parse(localStorage.getItem('preguntasCorrectas'))
 let preguntasIncorrectas = JSON.parse(localStorage.getItem('preguntasIncorrectas'))
 let porcActual = ''
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
     fetchData()
     if (vidasCont === null) {
@@ -288,6 +290,7 @@ const pintarCheck1 = data => {
     }
 
     botonContinuar.addEventListener('click', e => {
+        actualizarEstadistica()
         devolverAlerta(e);
         e.preventDefault();
         e.stopPropagation();
@@ -303,9 +306,6 @@ const pintarCheck1 = data => {
         checkbox1.checked = false
         checkbox2.checked = false
         checkbox3.checked = false
-
-
-        location.reload()
     }
 }
 const pintarData2 = data => {
@@ -569,6 +569,7 @@ const pintarCheck2 = data => {
     }
 
     botonContinuar.addEventListener('click', e => {
+        actualizarEstadistica()
         devolverAlerta(e);
         e.preventDefault();
         e.stopPropagation();
@@ -586,8 +587,6 @@ const pintarCheck2 = data => {
         checkbox2.checked = false
         checkbox3.checked = false
         checkbox4.checked = false
-
-        location.reload()
 
     }
 }
@@ -724,6 +723,7 @@ const pintarCheck3 = () => {
             }
 
             const sumarBarraProgress = () => {
+               
                 // MIENTRAS TANTO
                 let calculoProgreso = 100 / 5
 
@@ -740,6 +740,7 @@ const pintarCheck3 = () => {
 
                 barraVidas.style.width = `${porcActual}%`
                 localStorage.setItem('progreso', JSON.stringify(porcActual))
+                console.log(dataLength)
 
             }
 
@@ -750,6 +751,7 @@ const pintarCheck3 = () => {
             }
 
             botonContinuar.addEventListener('click', e => {
+                actualizarEstadistica()
                 devolverAlerta(e);
                 e.preventDefault();
                 e.stopPropagation();
@@ -759,9 +761,6 @@ const pintarCheck3 = () => {
 
                 alerta.classList.remove('alertaVerdadera')
                 alerta.classList.remove('alertaFalsa')
-
-
-                location.reload()
             }
 
         })
@@ -783,24 +782,26 @@ function sumarPreguntasCorrectas() {
     preguntasCorrectas += 1
     sumarPreguntasTotales()
     localStorage.setItem('preguntasCorrectas', JSON.stringify(preguntasCorrectas))
-    actualizarEstadistica()
+    // actualizarEstadistica()
 }
 
 function sumarPreguntasIncorrectas() {
     preguntasIncorrectas += 1
     sumarPreguntasTotales()
     localStorage.setItem('preguntasIncorrectas', JSON.stringify(preguntasIncorrectas))
-    actualizarEstadistica()
+    // actualizarEstadistica()
 }
 
 const sumarPreguntasTotales = () => {
     preguntasTotales = preguntasCorrectas + preguntasIncorrectas
     localStorage.setItem('preguntasTotales', JSON.stringify(preguntasTotales))
-    actualizarEstadistica()
+    // actualizarEstadistica()
 }
 
 
+
 const actualizarEstadistica = async () => {
+    console.log(progresoCont)
     let resp = await fetch(`http://localhost:5000/usuarios/1`, {
         method: 'PUT',
         body: JSON.stringify({
@@ -811,10 +812,14 @@ const actualizarEstadistica = async () => {
             "preguntasCorrectas": preguntasCorrectas,
             "preguntasIncorrectas": preguntasIncorrectas,
             "vidas": vidas.textContent,
-            "progreso":`${porcActual}%`
+            "progreso":`${progresoCont + (100/5)}`
         }),
         headers: {
             "Content-Type": "application/json; charset=UTF-8"
         }
     })
+
+    // location.reload()
 }
+
+
