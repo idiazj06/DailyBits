@@ -14,6 +14,14 @@ let vidasCont = JSON.parse(localStorage.getItem('vidas'))
 let progresoCont = JSON.parse(localStorage.getItem('progreso'))
 const barraVidas = document.getElementById('barra-vidas')
 const vidas = document.getElementById('vidas')
+const template3 = document.getElementById('template-main3').content
+const container = document.querySelectorAll('.cotenedores')
+let validador = ''
+let contadorClick = 0
+let preguntasTotales = JSON.parse(localStorage.getItem('preguntasTotales'))
+let preguntasCorrectas = JSON.parse(localStorage.getItem('preguntasCorrectas'))
+let preguntasIncorrectas = JSON.parse(localStorage.getItem('preguntasIncorrectas'))
+let porcActual = ''
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchData()
@@ -26,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         barraVidas.style.width = '0%'
     } else {
         barraVidas.style.width = `${progresoCont}%`
-    } 
+    }
 })
 
 const fetchData = async () => {
@@ -50,8 +58,10 @@ const getRandom = data => {
 
         if (random === 0 || random === 1 || random === 2) {
             pintarData1(dataPintar)
-        } else {
+        } else if (random === 3) {
             pintarData2(dataPintar)
+        } else {
+            pintarData3(dataPintar)
         }
     } else {
         console.log('local tiene algo - modifica data y random desde ahi')
@@ -61,9 +71,11 @@ const getRandom = data => {
         if (dataPintar.id === 'pregunta1' || dataPintar.id === 'pregunta2' || dataPintar.id === 'pregunta3') {
             console.log('es de las primeras 3')
             pintarData1(dataPintar)
-        } else {
+        } else if (dataPintar.id === 'pregunta4') {
             console.log('es la 4')
             pintarData2(dataPintar)
+        } else {
+            pintarData3(dataPintar)
         }
     }
 }
@@ -93,7 +105,6 @@ const pintarData1 = data => {
 
     pintarCheck1(data)
 }
-
 
 const pintarCheck1 = data => {
     const {
@@ -224,13 +235,11 @@ const pintarCheck1 = data => {
         if (checkbox1.value === 'true' || checkbox2.value === 'true' || checkbox3.value === 'true') {
             agregarAlertaVerdadera()
             sumarBarraProgress()
-            // sumarPreguntasCorrectas()
-            // sumarPreguntasCorrectas()
+            sumarPreguntasCorrectas()
         } else if (checkbox1.value !== 'true' || checkbox2.value !== 'true' || checkbox3.value !== 'true') {
             agregarAlertaFalsa()
             restarVidas()
-            // sumarPreguntasIncorrectas()
-            // sumarPreguntasIncorrectas()
+            sumarPreguntasIncorrectas()
         }
 
     }
@@ -254,13 +263,13 @@ const pintarCheck1 = data => {
 
     const sumarBarraProgress = () => {
         // MIENTRAS TANTO
-        let calculoProgreso = 100 / 4
+        let calculoProgreso = 100 / 5
 
         if (progresoCont === null) {
             progresoCont = 0
         }
 
-        let porcActual = calculoProgreso + progresoCont
+        porcActual = calculoProgreso + progresoCont
 
         if (porcActual >= 100) {
             porcActual = 100
@@ -281,6 +290,7 @@ const pintarCheck1 = data => {
     botonContinuar.addEventListener('click', e => {
         devolverAlerta(e);
         e.preventDefault();
+        e.stopPropagation();
     })
 
     function devolverAlerta(e) {
@@ -505,11 +515,11 @@ const pintarCheck2 = data => {
         if (checkbox1.value === 'true' || checkbox2.value === 'true' || checkbox3.value === 'true' || checkbox4.value === 'true') {
             agregarAlertaVerdadera()
             sumarBarraProgress()
-            // sumarPreguntasCorrectas()
+            sumarPreguntasCorrectas()
         } else if (checkbox1.value !== 'true' || checkbox2.value !== 'true' || checkbox3.value !== 'true' || checkbox4.value === 'true') {
             agregarAlertaFalsa()
             restarVidas()
-            // sumarPreguntasIncorrectas()
+            sumarPreguntasIncorrectas()
         }
 
     }
@@ -534,13 +544,13 @@ const pintarCheck2 = data => {
 
     const sumarBarraProgress = () => {
         // MIENTRAS TANTO
-        let calculoProgreso = 100 / 4
+        let calculoProgreso = 100 / 5
 
         if (progresoCont === null) {
             progresoCont = 0
         }
 
-        let porcActual = calculoProgreso + progresoCont
+        porcActual = calculoProgreso + progresoCont
 
         if (porcActual >= 100) {
             porcActual = 100
@@ -561,6 +571,7 @@ const pintarCheck2 = data => {
     botonContinuar.addEventListener('click', e => {
         devolverAlerta(e);
         e.preventDefault();
+        e.stopPropagation();
     })
 
     function devolverAlerta(e) {
@@ -581,6 +592,182 @@ const pintarCheck2 = data => {
     }
 }
 
+const pintarData3 = data => {
+    console.log(data)
+    const {
+        id,
+        pregunta,
+        opcion1,
+        opcion2,
+        opcion3,
+        opcion4,
+        opcion5
+    } = data
+
+    template3.getElementById('texto-principal').textContent = pregunta
+    template3.getElementById('texto-principal').dataset.id = id
+    template3.getElementById('drag-imagen-1').setAttribute('src', opcion1.dato.imagen)
+    template3.getElementById('drag-imagen-2').setAttribute('src', opcion2.dato.imagen)
+    template3.getElementById('drag-imagen-3').setAttribute('src', opcion3.dato.imagen)
+    template3.getElementById('drag-imagen-4').setAttribute('src', opcion4.dato.imagen)
+    template3.getElementById('drag-imagen-5').setAttribute('src', opcion5.dato.imagen)
+
+    fragment.appendChild(template3)
+    main.appendChild(fragment)
+
+    pintarCheck3()
+}
+const pintarCheck3 = () => {
+
+    const draggables = document.querySelectorAll('.drag-imagenes')
+    const drop1 = document.getElementById('drop-image-container1')
+    const drop2 = document.getElementById('drop-image-container2')
+    const drop3 = document.getElementById('drop-image-container2-1')
+    const drop4 = document.getElementById('drop-image-container2-2')
+    const drop5 = document.getElementById('drop-image-container2-3')
+
+    console.log(draggables)
+
+    draggables.forEach(draggable => {
+        draggable.addEventListener('click', e => {
+            e.preventDefault()
+
+            contadorClick += 1
+
+            console.log(contadorClick)
+            console.log('click')
+
+            if (contadorClick === 1) {
+                console.log(e.target)
+                e.target.classList = 'drop-imagenes'
+                e.target.id = 'drop-imagen-1'
+                validador += (parseInt(e.target.dataset.id))
+                drop1.appendChild(e.target)
+                console.log(e.target)
+            } else if (contadorClick === 2) {
+                console.log(e.target)
+                e.target.classList = 'drop-imagenes'
+                e.target.id = 'drop-imagen-2'
+                validador += (parseInt(e.target.dataset.id))
+                drop2.appendChild(e.target)
+                console.log(e.target)
+            } else if (contadorClick === 3) {
+                console.log(e.target)
+                e.target.classList = 'drop-imagenes'
+                e.target.id = 'drop-imagen-3'
+                validador += (parseInt(e.target.dataset.id))
+                drop3.appendChild(e.target)
+                console.log(e.target)
+            } else if (contadorClick === 4) {
+                console.log(e.target)
+                e.target.classList = 'drop-imagenes'
+                e.target.id = 'drop-imagen-4'
+                validador += (parseInt(e.target.dataset.id))
+                drop4.appendChild(e.target)
+                console.log(e.target)
+            } else if (contadorClick === 5) {
+                console.log(e.target)
+                e.target.classList = 'drop-imagenes'
+                e.target.id = 'drop-imagen-5'
+                validador += (parseInt(e.target.dataset.id))
+                drop5.appendChild(e.target)
+                console.log(e.target)
+            }
+
+            console.log(validador.length)
+
+            if (validador.length === 5) {
+                botonComprobar.removeAttribute("disabled", "")
+            } else {
+                return
+            }
+
+            botonComprobar.addEventListener('click', e => {
+                e.preventDefault()
+                validarRespuestas()
+                validar()
+            })
+
+
+            function validarRespuestas() {
+
+                if (validador === '12345') {
+                    console.log('Orden correcto')
+                    agregarAlertaVerdadera()
+                    sumarBarraProgress()
+                    sumarPreguntasCorrectas()
+                } else {
+                    console.log('Orden Incorrecto')
+                    agregarAlertaFalsa()
+                    restarVidas()
+                    sumarPreguntasIncorrectas()
+                }
+
+            }
+
+            const agregarAlertaVerdadera = () => {
+                botonComprobar.setAttribute("disabled", "")
+                alerta.classList.add('alertaVerdadera')
+            }
+            const agregarAlertaFalsa = () => {
+                botonComprobar.setAttribute("disabled", "")
+                let respCorrecta = document.querySelector('.true').textContent = 'respuesta correcta'
+
+                alerta.classList.remove('alert-success')
+                alerta.classList.add('alert-danger')
+                alerta.classList.add('alertaFalsa')
+
+                document.getElementById('texto-alert').textContent = 'La respuesta correcta es:'
+                document.getElementById('texto-sec-alert').textContent = respCorrecta
+                document.querySelector('.btn-continuar').classList.add('btn-danger')
+                document.querySelector('.btn-continuar').style.backgroundColor = 'none'
+            }
+
+            const sumarBarraProgress = () => {
+                // MIENTRAS TANTO
+                let calculoProgreso = 100 / 5
+
+                if (progresoCont === null) {
+                    progresoCont = 0
+                }
+
+                porcActual = calculoProgreso + progresoCont
+
+                if (porcActual >= 100) {
+                    porcActual = 100
+                }
+
+
+                barraVidas.style.width = `${porcActual}%`
+                localStorage.setItem('progreso', JSON.stringify(porcActual))
+
+            }
+
+            const restarVidas = () => {
+                vidas.textContent = Number(vidas.textContent) - 1
+
+                localStorage.setItem('vidas', JSON.stringify(Number(vidas.textContent)))
+            }
+
+            botonContinuar.addEventListener('click', e => {
+                devolverAlerta(e);
+                e.preventDefault();
+                e.stopPropagation();
+            })
+
+            function devolverAlerta(e) {
+
+                alerta.classList.remove('alertaVerdadera')
+                alerta.classList.remove('alertaFalsa')
+
+
+                location.reload()
+            }
+
+        })
+    })
+}
+
 function validar() {
     if (dataDownload === null) {
         console.log('esta vacio - se puede agregar')
@@ -590,4 +777,44 @@ function validar() {
         arrayData.splice(random, 1)
         localStorage.setItem('dataDownload', JSON.stringify(arrayData))
     }
+}
+
+function sumarPreguntasCorrectas() {
+    preguntasCorrectas += 1
+    sumarPreguntasTotales()
+    localStorage.setItem('preguntasCorrectas', JSON.stringify(preguntasCorrectas))
+    actualizarEstadistica()
+}
+
+function sumarPreguntasIncorrectas() {
+    preguntasIncorrectas += 1
+    sumarPreguntasTotales()
+    localStorage.setItem('preguntasIncorrectas', JSON.stringify(preguntasIncorrectas))
+    actualizarEstadistica()
+}
+
+const sumarPreguntasTotales = () => {
+    preguntasTotales = preguntasCorrectas + preguntasIncorrectas
+    localStorage.setItem('preguntasTotales', JSON.stringify(preguntasTotales))
+    actualizarEstadistica()
+}
+
+
+const actualizarEstadistica = async () => {
+    let resp = await fetch(`http://localhost:5000/usuarios/1`, {
+        method: 'PUT',
+        body: JSON.stringify({
+            "nombre": "admin",
+            "contraseña": "admin",
+            "correo": "admin@gmail.com",
+            "preguntasTotales": preguntasTotales,
+            "preguntasCorrectas": preguntasCorrectas,
+            "preguntasIncorrectas": preguntasIncorrectas,
+            "vidas": vidas.textContent,
+            "progreso":`${porcActual}%`
+        }),
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8"
+        }
+    })
 }

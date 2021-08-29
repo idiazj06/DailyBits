@@ -1,0 +1,152 @@
+.drop,
+.drag {
+    height: 30%;
+    width: 100%;
+    margin: auto;
+}
+
+.drops {
+    height: 50%;
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid white;
+}
+
+.drags {
+    height: 50%;
+    width: 90%;
+    margin: auto;
+}
+
+
+.drags-images {
+    height: 100%;
+    margin: 5% auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.drag-image-container {
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#drag-image-container1 {
+    width: 55%;
+    background: #8d8d8d;
+    border-radius: 50px;
+}
+
+#drag-image-container2 {
+    width: 43%;
+    background: #8d8d8d;
+    border-radius: 20px;
+}
+
+.drag-imagenes {
+    height: 100%;
+    width: 100%;
+}
+
+.drags-images2 {
+    height: 80%;
+    margin: 5% auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.drag-image-container2 {
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#drag-image-container2-1 {
+    width: 46%;
+    background: #8d8d8d;
+    border-radius: 20px;
+}
+
+#drag-image-container2-2 {
+    width: 25%;
+    background: #8d8d8d;
+    border-radius: 20px;
+}
+
+#drag-image-container2-3 {
+    width: 25%;
+    background: #8d8d8d;
+    border-radius: 20px;
+}
+
+.drag-imagenes {
+    cursor:pointer;
+}
+.drops-images {
+    height: 100%;
+    margin: 5% auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.drop-image-container {
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#drop-image-container1 {
+    width: 55%;
+    border-radius: 50px;
+}
+
+#drop-image-container2 {
+    width: 43%;
+    border-radius: 20px;
+}
+
+.drop-imagenes {
+    height: 100%;
+    width: 100%;
+}
+
+.drops-images2 {
+    height: 80%;
+    margin: 5% auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.drop-image-container2 {
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#drop-image-container2-1 {
+    width: 46%;
+    border-radius: 20px;
+}
+
+#drop-image-container2-2 {
+    width: 25%;
+    border-radius: 20px;
+}
+
+#drop-image-container2-3 {
+    width: 25%;
+    border-radius: 20px;
+}
+
+.drop-imagenes {
+    cursor:pointer;
+}

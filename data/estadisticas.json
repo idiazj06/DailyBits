@@ -1,0 +1,15 @@
+{
+  "usuarios": [
+    {
+      "nombre": "admin",
+      "contraseña": "admin",
+      "correo": "admin@gmail.com",
+      "preguntasTotales": 1,
+      "preguntasCorrectas": 1,
+      "preguntasIncorrectas": null,
+      "vidas": "5",
+      "progreso": "20%",
+      "id": 1
+    }
+  ]
+}

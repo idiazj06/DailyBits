@@ -1,6 +1,6 @@
 {
-    "html": [
-         {  "id": "pregunta1",
+    "html": [{
+            "id": "pregunta1",
             "pregunta": "¿Qué etiqueta es semánticamente correcta para el contenido principal?",
             "imagen": "./Images/Iconos/caracters.png",
             "opcion1": {
@@ -16,7 +16,8 @@
                 "valor": false
             }
         },
-         {  "id": "pregunta2",
+        {
+            "id": "pregunta2",
             "pregunta": "¿Qué etiqueta HTML nos sirve para incluir archivos de JavaScript?",
             "imagen": "./Images/Iconos/caracters.png",
             "opcion1": {
@@ -32,7 +33,8 @@
                 "valor": false
             }
         },
-         {  "id": "pregunta3",
+        {
+            "id": "pregunta3",
             "pregunta": "¿Qué significa DRY?",
             "imagen": "./Images/Iconos/caracters.png",
             "opcion1": {
@@ -48,9 +50,9 @@
                 "valor": false
             }
         },
-         {  "id": "pregunta4",
+        {
+            "id": "pregunta4",
             "pregunta": "¿Qué tecnologías pertenece al MEVN Stack?",
-            "imagen": "./Images/Iconos/caracters.png",
             "opcion1": {
                 "dato": {
                     "imagen": "./Images/Iconos/angularLogo.png",
@@ -78,6 +80,35 @@
                     "texto": "Kotlin"
                 },
                 "valor": false
+            }
+        },
+        {
+            "id": "pregunta5",
+            "pregunta": "Organiza la estructura de un documento HTML5",
+            "opcion1": {
+                "dato": {
+                    "imagen": "./Images/Drag Imagenes/drag1.png"
+                }
+            },
+            "opcion2": {
+                "dato": {
+                    "imagen": "./Images/Drag Imagenes/drag2.png"
+                }
+            },
+            "opcion3": {
+                "dato": {
+                    "imagen": "./Images/Drag Imagenes/drag3.png"
+                }
+            },
+            "opcion4": {
+                "dato": {
+                    "imagen": "./Images/Drag Imagenes/drag4.png"
+                }
+            },
+            "opcion5": {
+                "dato": {
+                    "imagen": "./Images/Drag Imagenes/drag5.png"
+                }
             }
         }
     ]
