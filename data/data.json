@@ -1,6 +1,6 @@
 {
-    "html": {
-        "pregunta1": {
+    "html": [
+         {  "id": "pregunta1",
             "pregunta": "¿Qué etiqueta es semánticamente correcta para el contenido principal?",
             "imagen": "./Images/Iconos/caracters.png",
             "opcion1": {
@@ -16,7 +16,7 @@
                 "valor": false
             }
         },
-        "pregunta2": {
+         {  "id": "pregunta2",
             "pregunta": "¿Qué etiqueta HTML nos sirve para incluir archivos de JavaScript?",
             "imagen": "./Images/Iconos/caracters.png",
             "opcion1": {
@@ -32,7 +32,7 @@
                 "valor": false
             }
         },
-        "pregunta3": {
+         {  "id": "pregunta3",
             "pregunta": "¿Qué significa DRY?",
             "imagen": "./Images/Iconos/caracters.png",
             "opcion1": {
@@ -48,7 +48,7 @@
                 "valor": false
             }
         },
-        "pregunta4": {
+         {  "id": "pregunta4",
             "pregunta": "¿Qué tecnologías pertenece al MEVN Stack?",
             "imagen": "./Images/Iconos/caracters.png",
             "opcion1": {
@@ -79,7 +79,6 @@
                 },
                 "valor": false
             }
-
         }
-    }
+    ]
 }
