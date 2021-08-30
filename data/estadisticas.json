@@ -1,14 +1,14 @@
 {
   "usuarios": [
     {
-      "nombre": "Ilan Diaz",
-      "contraseña": "1234",
-      "correo": "ijd@gmail.com",
+      "nombre": "Sandra Mora",
+      "contraseña": "12344",
+      "correo": "sandra@gmail.com",
       "preguntasTotales": 5,
       "preguntasCorrectas": 3,
       "preguntasIncorrectas": 2,
-      "vidas": 3,
-      "progreso": null,
+      "vidas": "3",
+      "progreso": "80",
       "id": 1
     }
   ]

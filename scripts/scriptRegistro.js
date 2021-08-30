@@ -1,6 +1,6 @@
 const botonCrear = document.getElementById('btn-crear');
-const dataEditar = JSON.parse(localStorage.getItem('dataEditar'))
-
+let dataEditar = JSON.parse(localStorage.getItem('dataEditar'))
+let dataID = ''
 
 botonCrear.addEventListener('click', e => {
     e.preventDefault();
@@ -11,11 +11,11 @@ botonCrear.addEventListener('click', e => {
 const mostrarCorrecto = () => {
     Swal.fire({
         position: 'center',
-        icon: 'success',
+        icon: 'info',
         title: 'Cuenta creada con exito',
         showConfirmButton: false,
         timer: 2000
-      })
+    })
 
     agregarData();
 }
@@ -26,7 +26,14 @@ const agregarData = async () => {
     const inputCorreo = document.getElementById('correo').value;
     const inputContraseña = document.getElementById('contraseña').value;
 
-    let resp = await fetch(`http://localhost:5000/usuarios/${dataEditar.id}`, {
+    if(dataEditar===null) {
+        dataEditar = 1
+        dataID = dataEditar
+    }else{
+        dataID=dataEditar.id
+    }
+
+    let resp = await fetch(`http://localhost:5000/usuarios/${dataID}`, {
         method: 'PUT',
         body: JSON.stringify({
             "nombre": inputNombre,
@@ -38,5 +45,5 @@ const agregarData = async () => {
         }
     })
 
-    window.location.href = "iniciarSesion.html"
+    // window.location.href = "iniciarSesion.html"
 }

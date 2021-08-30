@@ -9,7 +9,7 @@ btnInicio.addEventListener('click', async (e) => {
     let resp = await fetch(URL_DATA)
     let data = await resp.json();
     let buscar = data.find(mail=>mail.correo === inputEmail)
-    infoEditar(buscar)
+    
 
     
 
@@ -23,6 +23,7 @@ btnInicio.addEventListener('click', async (e) => {
           })
     }else{
         console.log('si existe')
+        infoEditar(buscar)
         ejecutarIngreso()
     }
    

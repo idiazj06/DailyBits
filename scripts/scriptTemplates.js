@@ -22,6 +22,7 @@ let preguntasTotales = JSON.parse(localStorage.getItem('preguntasTotales'))
 let preguntasCorrectas = JSON.parse(localStorage.getItem('preguntasCorrectas'))
 let preguntasIncorrectas = JSON.parse(localStorage.getItem('preguntasIncorrectas'))
 let porcActual = ''
+const dataEditar = JSON.parse(localStorage.getItem('dataEditar'))
 
 
 
@@ -803,12 +804,12 @@ const sumarPreguntasTotales = () => {
 
 const actualizarEstadistica = async () => {
     console.log(progresoCont)
-    let resp = await fetch(`http://localhost:5000/usuarios/1`, {
+    let resp = await fetch(`http://localhost:5000/usuarios/${dataEditar.id}`, {
         method: 'PUT',
         body: JSON.stringify({
-            "nombre": "admin",
-            "contraseña": "admin",
-            "correo": "admin@gmail.com",
+            "nombre": dataEditar.nombre,
+            "contraseña": dataEditar.contraseña,
+            "correo": dataEditar.correo,
             "preguntasTotales": preguntasTotales,
             "preguntasCorrectas": preguntasCorrectas,
             "preguntasIncorrectas": preguntasIncorrectas,

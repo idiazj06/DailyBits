@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
 const actualizarProgreso = (data) => {
     console.log(data)
 
-    if (data == 0) {
+    if (data === 0) {
         circle1.style.strokeDashoffset = circunferencia1
         circle2.style.strokeDashoffset = circunferencia2
         circle3.style.strokeDashoffset = circunferencia3
