@@ -12,9 +12,8 @@
 body {
     background: #16161A;
     width: 100vw;
-    overflow-x: hidden;
     overflow-y: hidden;
-    
+    overflow-x: hidden    
 }
 
 .container {
@@ -194,10 +193,3 @@ a {
     }
     
 }
-
-/* @media screen and (max-width:1200px) {
-    #logo {
-        margin-top: 5%;
-    }
-    
-} */

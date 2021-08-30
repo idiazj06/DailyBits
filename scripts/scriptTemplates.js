@@ -27,6 +27,7 @@ let porcActual = ''
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchData()
+    verificarContinuacion()
     if (vidasCont === null) {
         vidas.textContent = 5
     } else {
@@ -710,7 +711,7 @@ const pintarCheck3 = () => {
             }
             const agregarAlertaFalsa = () => {
                 botonComprobar.setAttribute("disabled", "")
-                let respCorrecta = document.querySelector('.true').textContent = 'respuesta correcta'
+                let respCorrecta = document.getElementById('texto-sec-alert').textContent = 'respuesta correcta'
 
                 alerta.classList.remove('alert-success')
                 alerta.classList.add('alert-danger')
@@ -723,7 +724,7 @@ const pintarCheck3 = () => {
             }
 
             const sumarBarraProgress = () => {
-               
+
                 // MIENTRAS TANTO
                 let calculoProgreso = 100 / 5
 
@@ -812,14 +813,31 @@ const actualizarEstadistica = async () => {
             "preguntasCorrectas": preguntasCorrectas,
             "preguntasIncorrectas": preguntasIncorrectas,
             "vidas": vidas.textContent,
-            "progreso":`${progresoCont + (100/5)}`
+            "progreso": `${progresoCont + (100/5)}`
         }),
         headers: {
             "Content-Type": "application/json; charset=UTF-8"
         }
     })
 
-    // location.reload()
+    // verificarContinuacion()
 }
 
 
+const verificarContinuacion = () => {
+    console.log(dataDownload)
+
+    if (dataDownload.length === 0) {
+        console.log('esta con corchetes')
+
+        Swal.fire({
+            title: '<strong>Has completado todas las preguntas</strong>',
+            icon: 'info',
+            confirmButtonText: '<a style="color:white" href="home.html">Continuar</a>',
+            // confirmButtonTextColor: '#FFFFFE',
+            confirmButtonColor : '#2CB67D'
+        })
+
+        localStorage.removeItem('dataDownload')
+    }
+}

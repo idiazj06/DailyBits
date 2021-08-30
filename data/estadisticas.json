@@ -1,14 +1,14 @@
 {
   "usuarios": [
     {
-      "nombre": "admin",
-      "contraseña": "admin",
-      "correo": "admin@gmail.com",
-      "preguntasTotales": 3,
-      "preguntasCorrectas": 2,
-      "preguntasIncorrectas": 1,
-      "vidas": "4",
-      "progreso": "60",
+      "nombre": "Ilan Jose",
+      "contraseña": "12345",
+      "correo": "ilan2@gmail.com",
+      "preguntasTotales": 0,
+      "preguntasCorrectas": 0,
+      "preguntasIncorrectas": 0,
+      "vidas": 0,
+      "progreso": 0,
       "id": 1
     }
   ]

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-        <!-- Hoja de estilos -->
-        <link rel="stylesheet" href="./styles/styleInSes.css">
-        <title>Iniciar Sesion</title>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="./styles/styleRegistro.css">
+    <title>Registro</title>
+</head>
 
 <body>
     <div class="container">
@@ -61,34 +61,54 @@
 
         <div class="container-principal">
 
-            <div class="" id="titulo">Iniciar sesión</div>
-            <div class="input">
-                <div class="" id="correo">Correo electrónico</div>
-                <!-- <input type="email" placeholder="Ingrese su correo electrónico" id="input-correo"> -->
-                <input name="" class="form-control" placeholder="Ingrese su correo electrónico" type="email" id="input-correo">
-            </div>
+            <div class="" id="titulo">Registrate</div>
 
-            
-            <div class="linea"></div>
-            <div class="container-contenido">
-                <button id="button" class="btn-ingresar">
-                    <p>INGRESAR</p>
-                </button>
-            </div>
-            <div id="olvidoCotrasena"><a href="">¿Se te olvidó tu contraseña?</a></div>
-            <div class="" id="inscribirse">¿Aún no tienes cuenta?   <a href="./registro.html">Inscribirse</a></div>
+            <form action="" id="formulario">
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input name="" class="form-control" placeholder="Full name" type="text" id="nombre">
+                </div>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    </div>
+                    <input name="" class="form-control" placeholder="Email address" type="email" id="correo">
+                </div>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Repeat password" type="password" id="contraseña">
+                </div> <!-- form-group// -->
+                <div class="form-group">
+                    <button id="btn-crear" class="btn btn-primary btn-block">Crear Cuenta</button>
+                </div> <!-- form-group// -->
+                <p class="text-center">¿Tienes una cuenta?</p>
+                <a href="./iniciarSesion.html">Inicia Sesion</a>
+            </form>
+
+
         </div>
 
-       
-    </div>
 
+    </div>
     <!-- sweet alert 2 -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Javascript principal -->
-    <script src="./scripts/scriptInicioSesion.js" type=module></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
-</script>
+    <script src="./scripts/scriptRegistro.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/b7253fd5c8.js" crossorigin="anonymous"></script>
+    </script>
 </body>
 
 </html>

@@ -32,9 +32,35 @@
                 <p id="email-perfil">victoria.valentina@gmail.com</p>
             </div>
 
-
+            <button id="editarPerfil">Editar perfil</button>
             <a href="#" id="cerrar-sesion">Cerrar sesión</a>
         </div>
+
+
+        <form action="" id="formulario" style=display:none>
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                </div>
+                <input name="" class="form-control" placeholder="Nombre Completo" type="text" id="nombre-edit">
+            </div>
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                </div>
+                <input name="" class="form-control" placeholder="Ingrese su correo" type="email" id="correo-edit">
+            </div>
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <input class="form-control" placeholder="Ingrese contraseña" type="password" id="contraseña-edit">
+            </div> <!-- form-group// -->
+            <div class="form-group">
+                <button id="btn-editar-enviar" class="btn btn-primary btn-block">Editar</button>
+            </div> <!-- form-group// -->
+            
+        </form>
     </main>
 
 
@@ -84,7 +110,7 @@
         </div>
     </footer>
 
-
+    <script src="./scripts/scriptPerfil.js"></script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
