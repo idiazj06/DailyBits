@@ -1,4 +1,5 @@
 const botonCrear = document.getElementById('btn-crear');
+const dataEditar = JSON.parse(localStorage.getItem('dataEditar'))
 
 
 botonCrear.addEventListener('click', e => {
@@ -25,7 +26,7 @@ const agregarData = async () => {
     const inputCorreo = document.getElementById('correo').value;
     const inputContraseña = document.getElementById('contraseña').value;
 
-    let resp = await fetch(`http://localhost:5000/usuarios/1`, {
+    let resp = await fetch(`http://localhost:5000/usuarios/${dataEditar.id}`, {
         method: 'PUT',
         body: JSON.stringify({
             "nombre": inputNombre,
@@ -37,5 +38,5 @@ const agregarData = async () => {
         }
     })
 
-    window.location.href = "home.html"
+    window.location.href = "iniciarSesion.html"
 }

@@ -2,7 +2,7 @@ const URL_Estadisticas = 'http://localhost:5000/usuarios/1'
 const preguntas_correctas = document.getElementById('correctas')
 const preguntas_incorrectas = document.getElementById('incorrectas')
 const preguntas_totales = document.getElementById('totales')
-
+const dataEditar = JSON.parse(localStorage.getItem('dataEditar'))
 
 
 
@@ -11,7 +11,7 @@ const preguntas_totales = document.getElementById('totales')
 document.addEventListener('DOMContentLoaded', async(e) => {
     e.preventDefault();
 
-    let resp = await fetch(URL_Estadisticas)
+    let resp = await fetch(`http://localhost:5000/usuarios/${dataEditar.id}`)
     let data = await resp.json();
     
 

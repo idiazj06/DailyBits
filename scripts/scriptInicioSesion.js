@@ -13,18 +13,18 @@ btnInicio.addEventListener('click', async (e) => {
 
     
 
-    // if(buscar === undefined) {
-    //     console.log('no exite')
-    //     Swal.fire({
-    //         icon: 'warning',
-    //         title: 'Oops...',
-    //         text: 'El correo ingresado no esta registrado',
-    //         footer: '<a href="registro.html">Registrate</a>'
-    //       })
-    // }else{
-    //     console.log('si existe')
-    //     ejecutarIngreso()
-    // }
+    if(buscar === undefined) {
+        console.log('no exite')
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'El correo ingresado no esta registrado',
+            footer: '<a href="registro.html">Registrate</a>'
+          })
+    }else{
+        console.log('si existe')
+        ejecutarIngreso()
+    }
    
     
 }
@@ -33,4 +33,8 @@ btnInicio.addEventListener('click', async (e) => {
 const infoEditar = data =>{
     localStorage.setItem('dataEditar', JSON.stringify(data))
 
+}
+
+const ejecutarIngreso = () =>{
+    window.location.href = "home.html"
 }

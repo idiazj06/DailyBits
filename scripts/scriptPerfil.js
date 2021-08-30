@@ -3,10 +3,12 @@ const emailPerfil = document.getElementById('email-perfil')
 const btnEditar = document.getElementById('editarPerfil')
 const formulario = document.getElementById('formulario')
 const enviarEdit = document.getElementById('btn-editar-enviar')
-
-
-
 const dataEditar = JSON.parse(localStorage.getItem('dataEditar'))
+const preguntasTotales = JSON.parse(localStorage.getItem('preguntasTotales'))
+const preguntasCorrectas = JSON.parse(localStorage.getItem('preguntasCorrectas'))
+const preguntasIncorrectas = JSON.parse(localStorage.getItem('preguntasIncorrectas'))
+const vidas = JSON.parse(localStorage.getItem('vidas'))
+const proceso = JSON.parse(localStorage.getItem('proceso'))
 
 
 document.addEventListener('DOMContentLoaded', async (e) => {
@@ -44,11 +46,11 @@ enviarEdit.addEventListener('click',async (e)=>{
             "nombre": nombreEdit,
             "contraseña": contraseñaEdit,
             "correo": emailEdit,
-            "preguntasTotales": 0,
-            "preguntasCorrectas": 0,
-            "preguntasIncorrectas": 0,
-            "vidas": 0,
-            "progreso": 0
+            "preguntasTotales": preguntasTotales,
+            "preguntasCorrectas": preguntasCorrectas,
+            "preguntasIncorrectas": preguntasIncorrectas,
+            "vidas": vidas,
+            "progreso": proceso
         }),
         headers: {
             "Content-Type": "application/json; charset=UTF-8"
